@@ -1,0 +1,15 @@
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\bin\Debug\net8.0\Traductor_Basico.exe
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\bin\Debug\net8.0\Traductor_Basico.deps.json
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\bin\Debug\net8.0\Traductor_Basico.runtimeconfig.json
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\bin\Debug\net8.0\Traductor_Basico.dll
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\bin\Debug\net8.0\Traductor_Basico.pdb
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.AssemblyInfoInputs.cache
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.AssemblyInfo.cs
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.csproj.CoreCompileInputs.cache
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.sourcelink.json
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.dll
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\refint\Traductor_Basico.dll
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.pdb
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\Traductor_Basico.genruntimeconfig.cache
+D:\Downloads\Ingeniería de la Información\Tercer Nivel\Estructura de Datos\Segundo Parcial\Semana 11\Traductor_Basico\obj\Debug\net8.0\ref\Traductor_Basico.dll
