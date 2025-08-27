@@ -1,4 +1,4 @@
-﻿namespace TraductorBasico
+﻿public class TraductorBasico
 {
     class Traductor
     {
