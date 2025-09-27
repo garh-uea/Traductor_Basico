@@ -1,165 +1,143 @@
 ﻿public class TraductorBasico
 {
-    class Traductor
+    // Diccionario Español -> Inglés
+    public static Dictionary<string, string> palabras = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
-        // Diccionario de traducción Español -> Inglés
-        private Dictionary<string, string> diccionario;
+        {"casa", "house"},
+        {"perro", "dog"},
+        {"gato", "cat"},
+        {"libro", "book"},
+        {"silla", "chair"},
+        {"mesa", "table"},
+        {"ventana", "window"},
+        {"puerta", "door"},
+        {"coche", "car"},
+        {"ciudad", "city"},
+        {"calle", "street"},
+        {"escuela", "school"},
+        {"maestro", "teacher"},
+        {"estudiante", "student"},
+        {"agua", "water"},
+        {"fuego", "fire"},
+        {"tierra", "earth"},
+        {"aire", "air"},
+        {"comida", "food"},
+        {"fruta", "fruit"},
+        {"pan", "bread"},
+        {"leche", "milk"},
+        {"café", "coffee"},
+        {"té", "tea"},
+        {"cerveza", "beer"},
+        {"vino", "wine"},
+        {"amigo", "friend"},
+        {"enemigo", "enemy"},
+        {"familia", "family"},
+        {"padre", "father"},
+        {"madre", "mother"},
+        {"hermano", "brother"},
+        {"hermana", "sister"},
+        {"sol", "sun"},
+        {"luna", "moon"},
+        {"estrella", "star"},
+        {"mar", "sea"},
+        {"rio", "river"},
+        {"montaña", "mountain"},
+        {"bosque", "forest"},
+        {"flor", "flower"},
+        {"árbol", "tree"},
+        {"pájaro", "bird"},
+        {"pez", "fish"},
+        {"caballo", "horse"},
+        {"vaca", "cow"},
+        {"cerdo", "pig"},
+        {"oveja", "sheep"},
+        {"color", "color"},
+        {"ropa", "clothes"}
+    };
 
-        public Traductor()
+    // Método para traducir frases
+    public static string HacerTraduccion(string texto)
+    {
+        string[] lista = texto.Split(' '); // separar palabras
+        for (int i = 0; i < lista.Length; i++)
         {
-            diccionario = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            string limpio = lista[i].Trim(new char[] { '.', ',', ';', '!', '?' });
+            if (palabras.ContainsKey(limpio.ToLower()))
             {
-                {"casa", "house"},
-                {"perro", "dog"},
-                {"gato", "cat"},
-                {"libro", "book"},
-                {"silla", "chair"},
-                {"mesa", "table"},
-                {"ventana", "window"},
-                {"puerta", "door"},
-                {"coche", "car"},
-                {"ciudad", "city"},
-                {"calle", "street"},
-                {"escuela", "school"},
-                {"maestro", "teacher"},
-                {"estudiante", "student"},
-                {"agua", "water"},
-                {"fuego", "fire"},
-                {"tierra", "earth"},
-                {"aire", "air"},
-                {"comida", "food"},
-                {"fruta", "fruit"},
-                {"pan", "bread"},
-                {"leche", "milk"},
-                {"café", "coffee"},
-                {"té", "tea"},
-                {"cerveza", "beer"},
-                {"vino", "wine"},
-                {"amigo", "friend"},
-                {"enemigo", "enemy"},
-                {"familia", "family"},
-                {"padre", "father"},
-                {"madre", "mother"},
-                {"hermano", "brother"},
-                {"hermana", "sister"},
-                {"sol", "sun"},
-                {"luna", "moon"},
-                {"estrella", "star"},
-                {"mar", "sea"},
-                {"rio", "river"},
-                {"montaña", "mountain"},
-                {"bosque", "forest"},
-                {"flor", "flower"},
-                {"árbol", "tree"},
-                {"pájaro", "bird"},
-                {"pez", "fish"},
-                {"caballo", "horse"},
-                {"vaca", "cow"},
-                {"cerdo", "pig"},
-                {"oveja", "sheep"},
-                {"color", "color"},
-                {"ropa", "clothes"}
-            };
-        }
-
-        // Método para traducir frases
-        public string TraducirFrase(string frase)
-        {
-            string[] palabras = frase.Split(' '); 
-            for (int i = 0; i < palabras.Length; i++)
-            {
-                string palabraLimpia = palabras[i].Trim(new char[] { '.', ',', ';', '!', '?' });
-
-                if (diccionario.ContainsKey(palabraLimpia.ToLower()))
-                {
-                    palabras[i] = palabras[i].Replace(palabraLimpia, diccionario[palabraLimpia.ToLower()]);
-                }
+                lista[i] = lista[i].Replace(limpio, palabras[limpio.ToLower()]);
             }
-            return string.Join(" ", palabras);
+        }
+        return string.Join(" ", lista); // unir palabras traducidas
+    }
+
+    // Método para agregar palabras
+    public static void AñadirPalabra()
+    {
+        Console.Write("\nEscriba la palabra en español: ");
+        string espanol = Console.ReadLine();
+
+        if (palabras.ContainsKey(espanol.ToLower()))
+        {
+            Console.WriteLine("Esa palabra ya existe en el diccionario.");
+            return;
         }
 
-        // Método para agregar nuevas palabras
-        public void AgregarPalabra()
+        Console.Write("Escriba la traducción en inglés: ");
+        string ingles = Console.ReadLine();
+
+        palabras.Add(espanol.ToLower(), ingles.ToLower());
+        Console.WriteLine($"======== Palabra agregada: {espanol} => {ingles} ========");
+    }
+
+    // Método para mostrar palabras
+    public static void VerPalabras()
+    {
+        Console.WriteLine("\n============ PALABRAS EN EL DICCIONARIO ============");
+        foreach (var par in palabras)
         {
-            string esp;
-            do
-            {
-                Console.Write("\nIngrese la palabra en español: ");
-                esp = Console.ReadLine();
-
-                if (diccionario.ContainsKey(esp.ToLower()))
-                {
-                    Console.WriteLine("La palabra ya existe en el diccionario. Ingrese otra.");
-                }
-                else
-                {
-                    break;
-                }
-
-            } while (true);
-
-            Console.Write("Ingrese la traducción en inglés: ");
-            string eng = Console.ReadLine();
-
-            diccionario.Add(esp.ToLower(), eng.ToLower());
-            Console.WriteLine($"✅ Palabra agregada: {esp} -> {eng}");
-        }
-
-        // Método para mostrar todas las palabras actuales
-        public void MostrarPalabras()
-        {
-            Console.WriteLine("\n============ LISTADO DE PALABRAS EN EL DICCIONARIO: ============");
-            foreach (var par in diccionario)
-            {
-                Console.WriteLine($"- {par.Key} -> {par.Value}");
-            }
+            Console.WriteLine($"{par.Key} => {par.Value}");
         }
     }
 
-    class Program
+    // Programa principal
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int menu;
+        do
         {
-            Traductor traductor = new Traductor();
-            int opcion;
+            Console.WriteLine("\n====================== MENÚ ======================");
+            Console.WriteLine("1. Traducir una frase");
+            Console.WriteLine("2. Agregar palabra");
+            Console.WriteLine("3. Ver todas las palabras");
+            Console.WriteLine("0. Salir");
+            Console.WriteLine("====================================================");
+            Console.Write("Seleccione: ");
+            menu = int.Parse(Console.ReadLine());
 
-            do
+
+            if (menu == 1)
             {
-                Console.WriteLine("\n==================== MENÚ ====================");
-                Console.WriteLine("1. Traducir una frase");
-                Console.WriteLine("2. Agregar palabras al diccionario");
-                Console.WriteLine("3. Mostrar listado de palabras actuales");
-                Console.WriteLine("0. Salir");
-                Console.Write("Seleccione una opción: ");
-                opcion = int.Parse(Console.ReadLine());
+                Console.Write("\nIngrese la frase en español: ");
+                string entrada = Console.ReadLine();
+                Console.WriteLine("Traducción: " + HacerTraduccion(entrada));
+            }
+            else if (menu == 2)
+            {
+                AñadirPalabra();
+            }
+            else if (menu == 3)
+            {
+                VerPalabras();
+            }
+            else if (menu == 0)
+            {
+                Console.WriteLine("Programa finalizado...");
+            }
+            else
+            {
+                Console.WriteLine("Opción inválida, intente otra vez.");
+            }
 
-                switch (opcion)
-                {
-                    case 1:
-                        Console.Write("\nIngrese la frase en español: ");
-                        string frase = Console.ReadLine();
-                        string traduccion = traductor.TraducirFrase(frase);
-                        Console.WriteLine("Traducción parcial: " + traduccion);
-                        break;
-
-                    case 2:
-                        traductor.AgregarPalabra();
-                        break;
-
-                    case 3:
-                        traductor.MostrarPalabras();
-                        break;
-
-                    case 0:
-                        Console.WriteLine("======= Saliendo del programa... =======");
-                        break;
-
-                    default:
-                        Console.WriteLine("Opción inválida, intente de nuevo.");
-                        break;
-                }
-
-            } while (opcion != 0);
-        }
+        } while (menu != 0);
     }
 }
